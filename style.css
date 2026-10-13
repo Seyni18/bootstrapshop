@@ -1,0 +1,86 @@
+/* ===== Variables : couleurs du thème ===== */
+:root {
+  --dark: #1f2a44;
+  --accent: #e0a458;
+  --accent-hover: #c98f45;
+}
+
+/* ===== Base ===== */
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', Roboto, sans-serif; color: #333; }
+
+/* ===== Navigation ===== */
+.navbar { background: rgba(31, 42, 68, .96); }
+.navbar-brand { font-weight: 700; letter-spacing: .5px; }
+.navbar-brand i { color: var(--accent); }
+
+/* ===== Héros ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background:
+    linear-gradient(rgba(31, 42, 68, .65), rgba(31, 42, 68, .75)),
+    url('https://picsum.photos/seed/boutique/1600/900') center/cover no-repeat;
+}
+.hero h1 { font-size: 2.2rem; font-weight: 800; }
+
+.badge-accent { background: var(--accent); color: #222; font-size: .9rem; }
+
+/* ===== Boutons ===== */
+.btn-accent { background: var(--accent); border: none; color: #222; font-weight: 600; }
+.btn-accent:hover { background: var(--accent-hover); color: #000; }
+
+/* ===== Titres de section ===== */
+.section-title { font-weight: 700; margin-bottom: 2.5rem; }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: .6rem auto 0;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ===== Fiches produits ===== */
+.product-card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+  transition: transform .25s, box-shadow .25s;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 .8rem 1.5rem rgba(0, 0, 0, .15);
+}
+.product-card .card-img-top { height: 200px; object-fit: cover; }
+.price { font-size: 1.2rem; font-weight: 700; color: var(--dark); }
+
+/* ===== Avantages ===== */
+.feature-icon { font-size: 2.8rem; color: var(--accent); }
+
+/* ===== Pied de page ===== */
+footer { background: var(--dark); color: #cfd6e6; }
+footer a { color: #cfd6e6; text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* ===== REQUÊTES MÉDIA ===== */
+
+/* Tablette (≥ 768 px) */
+@media (min-width: 768px) {
+  .hero h1 { font-size: 3rem; }
+  .product-card .card-img-top { height: 220px; }
+}
+
+/* Ordinateur (≥ 992 px) */
+@media (min-width: 992px) {
+  .hero h1 { font-size: 4rem; }
+  .product-card .card-img-top { height: 240px; }
+}
+
+/* Petit mobile (≤ 575 px) */
+@media (max-width: 575px) {
+  .hero { min-height: 85vh; }
+  .section-title { margin-bottom: 1.8rem; }
+}
